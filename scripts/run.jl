@@ -25,8 +25,10 @@ tetras = [
     (1,2,3,4),
     (2,3,4,5),
     (2,4,5,6),
-    #not sure on what exactly counts as tetrahedra, this is kind of a strange test, doesn't matter for now
+    (2,3,4,6),
+    (3,4,5,6),
     
+        
 ]
 
 template = ReggePIES.build_template(num_vert, edges, tetras)
