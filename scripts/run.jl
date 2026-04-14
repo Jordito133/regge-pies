@@ -27,8 +27,6 @@ tetras = [
     (2,4,5,6),
     (2,3,4,6),
     (3,4,5,6),
-    
-        
 ]
 
 template = ReggePIES.build_template(num_vert, edges, tetras)
@@ -82,3 +80,4 @@ println("\nSlice edge lengths:")
 for (eid, e) in enumerate(template.edges)
     println("edge $eid $e  s = ", state.current.edge_s[eid])
 end
+
