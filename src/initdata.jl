@@ -50,7 +50,7 @@ function build_cartesian_vertex_coords()
 end
 
 function gauge_wave_H(x::Float64)
-    return 1.0 - A * sin(2.0 * pi * x / Lx)
+    return 1.0 + A * sin(2.0 * pi * x / Lx)
 end
 
 # we define the coordinate X = integral_0^x sqrt(H(ξ)) dξ so that dX^2+dy^2+dz^2 is the metric; in this way we can easily do the initialization
@@ -134,6 +134,7 @@ function wrapped_intrinsic_displacement(
     dz = wrapped_delta_1d(p[3], q[3], Lz)
     return @SVector [dX, dy, dz]
 end
+
 
 
 
