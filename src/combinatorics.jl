@@ -102,3 +102,26 @@ function build_template(num_vert::Int,
 
     return SliceTemplate(num_vert, edges, tetras, neighbors, v2e, v2t, e2tri)
 end
+
+# helpers
+
+function edge_id(template::SliceTemplate, i::Int, j::Int)
+    edge = edgekey(i, j)
+    eid = findfirst(==(edge), template.edges)
+    return eid
+end
+
+has_edge(template::SliceTemplate, i::Int, j::Int) = !isnothing(findfirst(==(edgekey(i, j)), template.edges))
+
+tetra_contains_vertex(tet::NTuple{4,Int}, v::Int) = v in tet
+
+function tetra_contains_edge(tet::NTuple{4,Int}, edge::NTuple{2,Int})
+    a, b = edgekey(edge...)
+    return (a in tet) && (b in tet)
+end
+
+function tetra_contains_triangle(tet::NTuple{4,Int}, tri::NTuple{3,Int})
+    i, j, k = trianglekey(tri...)
+    return (i in tet) && (j in tet) && (k in tet)
+end
+
