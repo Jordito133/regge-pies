@@ -24,7 +24,7 @@ with the simplex $(i,j,k,l,m)$ ordered as $(0,1,2,3,4)$ and $a,b=1,2,3,4$
 
 Regge equation residual (constants are irrelevant but included for completeness)
 $$
-R_{ij}=\sum_k \epsilon_{ijk} \frac{s_{ik}+s_{ij}-s_{ij}}{16A_{ijk}}
+R_{ij}=\sum_k \epsilon_{ijk} \frac{s_{ik}+s_{jk}-s_{ij}}{16A_{ijk}}
 $$
 
 The initial gauge wave test 
