@@ -10,7 +10,7 @@ Deficit - spacelike triangle
 $$
 \epsilon_{ijk}=\sum_{\sigma \supset(i,j,k)} \theta^\sigma_{ijk}
 $$
-Gramm matrix, also metric
+Gram matrix, also metric
 $$
 G_{ab}\equiv g_{ab}=\frac{1}{2}(s_{0a}+s_{0b}-s_{ab})
 $$
