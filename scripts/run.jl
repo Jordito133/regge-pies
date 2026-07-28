@@ -81,3 +81,8 @@ for (eid, e) in enumerate(template.edges)
     println("edge $eid $e  s = ", state.current.edge_s[eid])
 end
 
+# An equilateral triangle with side length 1 has area sqrt(3)/4.
+
+println("Area check for equilateral triangle")
+println("  Calculated value: ", ReggePIES.triangle_area_from_sq(1.0, 1.0, 1.0))
+println("  Expected value:   ", sqrt(3.0) / 4.0)

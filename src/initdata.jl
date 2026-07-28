@@ -9,14 +9,14 @@
 # Gauge wave code
 ##########################################
 
-const A = 0.1
-const Nx = 20
-const Ny = 20
-const Nz = 20
+const A = 0.2
+const Nx = 30
+const Ny = 30
+const Nz = 30
 
-const Lx = 1.0
-const Ly = 1.0
-const Lz = 1.0
+const Lx = 2.0
+const Ly = 2.0
+const Lz = 2.0
 
 const nsub=200
 
@@ -68,7 +68,13 @@ function gauge_wave_X(x::Float64)
 
     for m in 1:(nsub - 1)
         ξ = m * h
-        coeff = isodd(m) ? 4.0 : 2.0
+        # alternate wights
+        if isodd(m)
+            coeff = 4.0
+        else
+            coeff = 2.0
+        end
+        
         s += coeff * sqrt(gauge_wave_H(ξ))
     end
 
@@ -140,7 +146,8 @@ end
 
 
 
-# intrinsic squared edge length for the gauge-wave slice using X
+# Intrinsic squared edge length:
+# s_ij = (Delta X)^2 + (Delta y)^2 + (Delta z)^2.
 function edge_sq_from_gauge_wave_integral(
     p::SVector{3,Float64},
     q::SVector{3,Float64},
@@ -253,20 +260,3 @@ function build_gauge_wave_initial_state(
 
     return template, coords, state
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
