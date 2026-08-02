@@ -6,6 +6,30 @@
 #  
 
 ##########################################
+# Grid
+##########################################
+# each metric will need a different grid
+
+
+struct GridSpec
+    N::NTuple{3,Int}
+    L::NTuple{3,Float64}
+    periodic::NTuple{3,Bool}
+end
+
+
+function grid_spacing(grid::GridSpec, axis::Int)
+    if grid.periodic[axis]
+        return grid.L[axis] / grid.N[axis]
+    else
+        return grid.L[axis] / (grid.N[axis] - 1)
+    end
+end
+
+
+
+### Old init data code for now:
+##########################################
 # Gauge wave code
 ##########################################
 
